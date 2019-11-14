@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `apartments`
 --
-CREATE DATABASE IF NOT EXISTS `apartments` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+CREATE DATABASE IF NOT EXISTS `apartments` DEFAULT CHARACTER SET utf8mb4;
 USE `apartments`;
 
 DELIMITER $$
@@ -48,9 +48,9 @@ CREATE TABLE `admin` (
   `SL_NO` int(11) NOT NULL,
   `EMAIL` varchar(100) NOT NULL,
   `NAME` varchar(100) NOT NULL,
-  `PASSWORD` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `PASSWORD` varchar(50) CHARACTER SET utf8mb4   NOT NULL,
   `TIMESTAMP` bigint(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Truncate table before insert `admin`
@@ -79,7 +79,7 @@ CREATE TABLE `apartment_details` (
   `BLOCK` varchar(5) NOT NULL,
   `APT_NUM` varchar(5) NOT NULL,
   `BHK` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Truncate table before insert `apartment_details`
@@ -189,7 +189,7 @@ CREATE TABLE `complaints` (
   `DATE_FILED` date NOT NULL,
   `COMP_STATUS` varchar(25) NOT NULL DEFAULT 'NOT RESOLVED',
   `TIMESTAMP` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Truncate table before insert `complaints`
@@ -235,7 +235,7 @@ CREATE TABLE `comp_resolution` (
   `COMP_HANDLER` varchar(150) NOT NULL,
   `HANDLER_PHONE` bigint(20) NOT NULL,
   `TIMESTAMP` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Truncate table before insert `comp_resolution`
@@ -273,10 +273,10 @@ CREATE TABLE `formerresident` (
   `NAME` varchar(150) NOT NULL,
   `PHONE_NO` bigint(20) NOT NULL,
   `EMAILID` varchar(150) NOT NULL DEFAULT 'OPTED OUT',
-  `FEEDBACK` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `FEEDBACK` text CHARACTER SET utf8mb4,
   `EXITTIMESTAMP` bigint(20) DEFAULT NULL,
   `DURATIONTIMESTAMP` bigint(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Truncate table before insert `formerresident`
@@ -311,10 +311,10 @@ CREATE TABLE `guest` (
   `APT_NUM` varchar(5) NOT NULL,
   `REASON` text NOT NULL,
   `PHONE` varchar(15) NOT NULL,
-  `DATE_OE` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `DATE_OE` varchar(15) CHARACTER SET utf8mb4 NOT NULL,
   `TIME_OE` varchar(15) NOT NULL,
   `TIMESTAMP` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Truncate table before insert `guest`
@@ -340,7 +340,7 @@ INSERT INTO `guest` (`GUID`, `NAME`, `APT_BLOCK`, `APT_NUM`, `REASON`, `PHONE`, 
 CREATE TABLE `resident` (
   `RES_ID` int(11) NOT NULL,
   `TITLE` varchar(5) NOT NULL,
-  `FULLNAME` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `FULLNAME` varchar(100) CHARACTER SET utf8mb4   NOT NULL,
   `LNAME` varchar(100) NOT NULL,
   `DOB` varchar(15) NOT NULL,
   `PHONE_NO` bigint(20) NOT NULL,
@@ -349,7 +349,7 @@ CREATE TABLE `resident` (
   `PREFERRED_BLOCK` varchar(3) NOT NULL,
   `PREFERRED_APT` varchar(3) NOT NULL,
   `REG_TIMESTAMP` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Truncate table before insert `resident`
